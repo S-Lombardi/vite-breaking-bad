@@ -7,7 +7,7 @@ export default {
 
 <template lang="">
     <div>
-        
+    
     </div>
 </template>
 

@@ -13,7 +13,7 @@ export default {
 
     mounted(){
         axios.get('https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=10').then((result) =>{
-            console.log(result.data)
+            this.pokemonList = result.data.docs 
         })
         
 
