@@ -1,7 +1,7 @@
 <script>
 //Importo le componenti
 import Main from './components/Main.vue'
-import Header from './components/Main.vue'
+import Header from './components/Header.vue'
 
 //Posso utilizzare le componenti
 export default{
