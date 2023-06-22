@@ -1,11 +1,28 @@
-<script setup>
-import   from '  '
+<script>
+//Importo le componenti
+import Main from './components/Main.vue'
+import Header from './components/Main.vue'
+
+//Posso utilizzare le componenti
+export default{
+  components:{
+    Main,
+    Header, 
+  }
+}
 </script>
 
+<!-- Visualizzo le componenti -->
 <template>
- 
+  <div>
+    <Header/>
+    <Main/>
+  </div>
 </template>
 
-<style scoped>
+<style lang="scss">
+@use './styles/generals.scss' as *;
+@use './styles/partials/variables' as *;
+
 
 </style>
