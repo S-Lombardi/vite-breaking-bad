@@ -14,14 +14,14 @@ export default {
             <div class="">
                 {{myPokemon.number}}
             </div>
-            <div class="text-center">
+            <div class="">
                 <strong>
                 {{myPokemon.name}}
                 </strong>
             </div> 
             
             
-            <em class="d-block text-center ">
+            <em class="d-block ">
                 {{myPokemon.type1}}
             </em>   
 
