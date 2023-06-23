@@ -1,5 +1,8 @@
 <script>
 export default {
+    props:{
+        myPokemon : Object,
+    }
     
 }
 </script>
@@ -7,7 +10,18 @@ export default {
 
 <template lang="">
     <div>
-        Card pokemon
+        <img :src="myPokemon.imageUrl" class="mb-3">
+        <div>
+            {{myPokemon.number}}
+        </div>
+        <strong>
+            {{myPokemon.name}}
+        </strong>
+        <em class="d-block">
+            {{myPokemon.type1}}
+        </em>   
+
+        
     </div>
 </template>
 

@@ -1,8 +1,8 @@
 <script>
 import axios from 'axios'
+
 //Importo la componente delle card
 import cardPokemon from './cardPokemon.vue'
-
 export default {
     components:{
         cardPokemon,
@@ -31,7 +31,10 @@ export default {
     <main class="container">   
         <div class="row justify-content-center align-items-center">
             <div v-for="(pokemon, index) in pokemonList" :key="index"   class="col-6 col-md-4 col-lg-3">
-                <cardPokemon/>
+                <!-- (item, index) -> :myPokemon="item"-->
+                <cardPokemon :myPokemon="pokemon"/>
+
+
             </div>
         </div>
     </main>
