@@ -41,7 +41,8 @@ export default {
 </template>
 
 
-<style lang="scss">
+<style lang="scss" >
 @use '../styles/partials/variables' as *;
-    
+
+
 </style>
