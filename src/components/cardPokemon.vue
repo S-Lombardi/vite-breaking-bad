@@ -7,11 +7,11 @@ export default {
 
 <template lang="">
     <div>
-    
+        Card pokemon
     </div>
 </template>
 
 
-<style lang="">
+<style lang="scss" scoped>
     
 </style>
