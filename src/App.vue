@@ -31,7 +31,7 @@ export default{
 <!-- Visualizzo le componenti -->
 <template>
   <div>
-    <Header/>
+    <Header/  @changeType="getSelectedPokemonType">
     <Main/>
   </div>
 </template>
