@@ -32,4 +32,7 @@ export const store = reactive( {
 
     //variabile per salvare il tipo di pokemon selezionato nella select
     selectedType: '',
+    
+    //Variabile in cui salvare la chiamata api per tipo di pokemon selezionato
+    type_url: ''
 })

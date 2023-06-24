@@ -24,9 +24,7 @@ export default {
                 <div v-for="(pokemon, index) in store.pokemonList" :key="index"  class="col-6 col-md-4 col-lg-3">
                     <!-- (item, index) -> :myPokemon="item". MyPokemon è il nome scelto per la prop che passo
                     //alla componente cardPokemon (componente FIGLIO di Main)-->
-                    <cardPokemon :myPokemon="pokemon"/>
-    
-    
+                    <cardPokemon :myPokemon="pokemon"/>    
                 </div>
             </div>
             
