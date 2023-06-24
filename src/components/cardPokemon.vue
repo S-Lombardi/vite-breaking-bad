@@ -20,7 +20,6 @@ export default {
                 </strong>
             </div> 
             
-            
             <em class="d-block ">
                 {{myPokemon.type1}}
             </em>   

@@ -14,10 +14,9 @@ export default{
   },
   data(){
     return{
-
       store,
       //Definisco una variabile per un array inizialmente vuoto
-      //in cui inserirò i valori delle card
+      //in cui inserirò la lista dei pokemon
       pokemonList: []
 
     }
