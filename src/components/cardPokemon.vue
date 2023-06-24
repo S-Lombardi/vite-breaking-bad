@@ -8,26 +8,23 @@ export default {
 
 
 <template lang="">
-    <div class="mt-5">
-        <div class="card d-flex flex-column align-items-center ">
-            <img :src="myPokemon.imageUrl" class="mb-3 mt-4">
-            <div class="">
-                {{myPokemon.number}}
-            </div>
-            <div class="">
-                <strong>
-                {{myPokemon.name}}
-                </strong>
-            </div> 
-            
-            <em class="d-block ">
-                {{myPokemon.type1}}
-            </em>   
-
+    
+    <div class="card d-flex flex-column align-items-center mt-3 mb-3 ">
+        <img :src="myPokemon.imageUrl" class="mb-3 mt-3">
+        <div class="">
+            {{myPokemon.number}}
         </div>
-
+        <div class="">
+            <strong>
+            {{myPokemon.name}}
+            </strong>
+        </div> 
         
+        <em class="d-block ">
+            {{myPokemon.type1}}
+        </em>   
     </div>
+
 </template>
 
 
@@ -35,7 +32,7 @@ export default {
 @use '../styles/partials/variables' as *;
 
 .card {
-    background-color: gray;
+    background-color: rgb(151, 151, 151);
 }
 img{
     width: 120px;
