@@ -8,26 +8,28 @@ export const store = reactive( {
     pokemonList: [],
 
     // inserisco in un array tutti i tipi di pokemon 
-    pokemonTypes : [
-        [
-            "Bug",
-            "Dark",
-            "Dragon",
-            "Electric",
-            "Fairy",
-            "Fighting",
-            "Fire",
-            "Flying",
-            "Ghost",
-            "Grass",
-            "Ground",
-            "Ice",
-            "Normal",
-            "Poison",
-            "Psychic",
-            "Rock",
-            "Steel",
-            "Water"
-        ]
-    ]
+    pokemonTypes : 
+    [
+        "Bug",
+        "Dark",
+        "Dragon",
+        "Electric",
+        "Fairy",
+        "Fighting",
+        "Fire",
+        "Flying",
+        "Ghost",
+        "Grass",
+        "Ground",
+        "Ice",
+        "Normal",
+        "Poison",
+        "Psychic",
+        "Rock",
+        "Steel",
+        "Water"
+    ],
+
+    //variabile per salvare il tipo di pokemon selezionato nella select
+    selectedType: '',
 })
