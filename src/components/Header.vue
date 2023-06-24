@@ -1,6 +1,6 @@
 <script>
 export default {
-    
+
 }
 </script>
 
@@ -10,10 +10,16 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    HEADER
-
+                    <!-- SELECT -->
+                    <select class="form-select select-bar mt-5" aria-label="Default select example">
+                        <option value="">
+                            Seleziona il tipo di Pokemon
+                        </option>
+                        <option value=""> 
+                            sdsdss
+                        </option>
+                    </select>
                 </div>
-
             </div>
         </div>
 
@@ -25,5 +31,5 @@ export default {
     .col-12{
         border: 1px dashed red;
     }
-    
+
 </style>
