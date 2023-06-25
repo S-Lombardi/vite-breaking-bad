@@ -18,23 +18,24 @@ export default{
     }
   },
   mounted(){
-    //chiamata Api filtrata
-    axios.get(store.apiUrl).then((result) =>{
-      //inserisco nella variabile l array della chiamata con la lista dei Pokemon
-      store.pokemonList = result.data.docs
-    }),
-
+    
     this.getSelectedPokemonType()
   },
   methods:{
     
     //funzione che cambia la stringa della chiamata per selezionare il pokemon per tipo
     getSelectedPokemonType(){
-
+      
       store.type_url = store.apiUrl
       if(store.selectedType !== ''){
-        store.type_url += "&eq[type1]="  + store.selectedType
+        store.type_url += "&eq[type1]=" + store.selectedType
       }
+
+      //chiamata Api filtrata
+      axios.get(store.type_url).then((result) =>{
+        //inserisco nella variabile l array della chiamata con la lista dei Pokemon
+        store.pokemonList = result.data.docs
+      })
     }
   }
 
