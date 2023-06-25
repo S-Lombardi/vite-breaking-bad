@@ -8,6 +8,7 @@ import { store } from './store.js'; //importo lo store dal file store.js
 
 //Posso utilizzare le componenti
 export default{
+  
   components:{
     Main,
     Header,
@@ -18,9 +19,11 @@ export default{
     }
   },
   mounted(){
-    
+  
     this.getSelectedPokemonType()
+  
   },
+ 
   methods:{
     
     //funzione che cambia la stringa della chiamata per selezionare il pokemon per tipo
@@ -30,13 +33,18 @@ export default{
       if(store.selectedType !== ''){
         store.type_url += "&eq[type1]=" + store.selectedType
       }
-
       //chiamata Api filtrata
       axios.get(store.type_url).then((result) =>{
         //inserisco nella variabile l array della chiamata con la lista dei Pokemon
         store.pokemonList = result.data.docs
       })
+    },
+
+    resetSearch(){
+      store.type_url = store.apiUrl
     }
+    
+
   }
 
 }
@@ -45,8 +53,9 @@ export default{
 <!-- Visualizzo le componenti -->
 <template>
   <div>
-    <!-- dall'header passo con  $emit("changeType") il valore della select selezionato -->
-    <Header @changeType="getSelectedPokemonType()" />
+    <!-- Passo con $emit("changeType" - @clickSearch ) l'evento @ dall' Header -->
+    
+    <Header @changeType="getSelectedPokemonType()" @clickReset="resetSearch()"/>
     <Main/>
   </div>
 </template>

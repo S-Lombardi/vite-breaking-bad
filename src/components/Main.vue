@@ -45,6 +45,8 @@ export default {
 .row{
     background-color: rgb(177, 209, 205);
     border-radius: 20px;
+    height: 600px;
+    overflow: scroll;
 }
 
 

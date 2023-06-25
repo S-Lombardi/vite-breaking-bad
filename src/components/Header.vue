@@ -6,8 +6,8 @@ export default {
         return {
             store,
         }
-    }
-
+    },
+    
 }
 </script>
 
@@ -16,9 +16,9 @@ export default {
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 p-4">
                     <!-- SELECT -->
-                    <select class="form-select select-bar mt-5" v-model="store.selectedType" aria-label="Default select example"  @change="$emit('changeType')">
+                    <select class="form-select select-bar " v-model="store.selectedType" aria-label="Default select example"  @change="$emit('changeType')">
                         <option value="">
                             Seleziona il tipo di Pokemon
                         </option>
@@ -26,6 +26,13 @@ export default {
                             {{type}}
                         </option>
                     </select>
+                </div>
+                <!-- PULSANTE RESET -->
+                <div class="col-3 p-4">
+                    <button type="button" class="btn btn-secondary" @click="$emit('clickReset')">
+                        Pulsante reset
+                    </button>
+
                 </div>
             </div>
         </div>
