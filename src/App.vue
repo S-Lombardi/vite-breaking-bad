@@ -21,16 +21,16 @@ export default{
   mounted(){
   
     this.getSelectedPokemonType()
-  
+    this.getPokemonTypes();
   },
  
   methods:{
     
-    //funzione che cambia la stringa della chiamata per selezionare il pokemon per tipo
+    //funzione per selezionare pokemon per tipo
     getSelectedPokemonType(){
-      
       store.type_url = store.apiUrl
       if(store.selectedType !== ''){
+        //Aggiungo alla fine della chiamata la stringa che filtra per tipo di pokemon
         store.type_url += "&eq[type1]=" + store.selectedType
       }
       //chiamata Api filtrata
@@ -39,12 +39,21 @@ export default{
         store.pokemonList = result.data.docs
       })
     },
-
+    
+    //inserisco in pokemonTypes il risultato della chiamata di tutti i tipi di pokemon
+    getPokemonTypes() {
+      axios.get(store.apiUrlTypes).then((result) =>{
+        store.pokemonTypes = result.data
+      })
+    },
+    
+    //svuoto la variabile che contiene il tipo di pokemon selezionato
+    //
     resetSearch(){
-      store.type_url = store.apiUrl
+      store.selectedType = '';
+      this.getSelectedPokemonType()
     }
     
-
   }
 
 }
@@ -54,7 +63,6 @@ export default{
 <template>
   <div>
     <!-- Passo con $emit("changeType" - @clickSearch ) l'evento @ dall' Header -->
-    
     <Header @changeType="getSelectedPokemonType()" @clickReset="resetSearch()"/>
     <Main/>
   </div>

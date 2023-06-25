@@ -39,9 +39,6 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 
-// .card {
-//     background-color: rgb(151, 151, 151);
-// }
 img{
     width: 120px;
     height: 120px;
