@@ -7,6 +7,17 @@ export default {
             store,
         }
     },
+    computed:{
+        //funzione per filtrare il nome del pokemon cercato
+        searchPokemonName(){
+            if(store.search_name !== ""){
+
+                
+            
+            }
+        }
+
+    }
     
 }
 </script>
@@ -35,7 +46,7 @@ export default {
                 </div>
                 <!-- BARRA DI RICERCA PER NOME -->
                 <div class="col-5">
-                    <input class="form-control" v-model="search_name" type="text" placeholder="Scrivi il nome del pokemon che stai cercando..." >
+                    <input class="form-control" v-model="store.search_name" type="text" placeholder="Scrivi il nome del pokemon che stai cercando..." >
                 </div>
             </div>
         </div>
