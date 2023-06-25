@@ -29,9 +29,9 @@ export default{
     //funzione per selezionare pokemon per tipo
     getSelectedPokemonType(){
       store.type_url = store.apiUrl
-      if(store.selectedType !== ''){
+      if(store.selected_type !== ''){
         //Aggiungo alla fine della chiamata la stringa che filtra per tipo di pokemon
-        store.type_url += "&eq[type1]=" + store.selectedType
+        store.type_url += "&eq[type1]=" + store.selected_type
       }
       //chiamata Api filtrata
       axios.get(store.type_url).then((result) =>{
@@ -50,7 +50,7 @@ export default{
     //svuoto la variabile che contiene il tipo di pokemon selezionato
     //
     resetSearch(){
-      store.selectedType = '';
+      store.selected_type = '';
       this.getSelectedPokemonType()
     }
     

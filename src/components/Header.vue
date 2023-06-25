@@ -15,10 +15,10 @@ export default {
 <template lang="">
     <header>
         <div class="container">
-            <div class="row">
-                <div class="col-3 p-4">
-                    <!-- SELECT -->
-                    <select class="form-select select-bar " v-model="store.selectedType" aria-label="Default select example"  @change="$emit('changeType')">
+            <div class="row p-4">
+                <div class="col-3">
+                    <!-- SELECT PER TIPO -->
+                    <select class="form-select select-bar " v-model="store.selected_type" aria-label="Default select example"  @change="$emit('changeType')">
                         <option value="">
                             Seleziona il tipo di Pokemon
                         </option>
@@ -28,11 +28,14 @@ export default {
                     </select>
                 </div>
                 <!-- PULSANTE RESET -->
-                <div class="col-3 p-4">
+                <div class="col-3 ">
                     <button type="button" class="btn btn-secondary" @click="$emit('clickReset')">
                         Pulsante reset
                     </button>
-
+                </div>
+                <!-- BARRA DI RICERCA PER NOME -->
+                <div class="col-5">
+                    <input class="form-control" v-model="search_name" type="text" placeholder="Scrivi il nome del pokemon che stai cercando..." >
                 </div>
             </div>
         </div>
