@@ -35,7 +35,18 @@ export default{
       }
       //chiamata Api filtrata
       axios.get(store.type_url).then((result) =>{
-        //inserisco nella variabile l array della chiamata con la lista dei Pokemon
+        //inserisco nella variabile il risultato della chiamata filtrata per tipo
+        store.pokemonList = result.data.docs
+      })
+    },
+
+    //funzione per la ricerca dei Pokmon per nome
+    searchPokemon(){
+      store.type_url = store.apiUrl
+      store.type_url += "&q[name]=" + store.search_name
+      //chiamata Api filtrata
+      axios.get(store.type_url).then((result) =>{
+        //inserisco nella variabile il risultato della chiamata filtrata per nome
         store.pokemonList = result.data.docs
       })
     },
@@ -51,6 +62,7 @@ export default{
     //
     resetSearch(){
       store.selected_type = '';
+      store.search_name = '';
       this.getSelectedPokemonType()
     }
     
@@ -63,7 +75,7 @@ export default{
 <template>
   <div>
     <!-- Passo con $emit("changeType" - @clickSearch ) l'evento @ dall' Header -->
-    <Header @changeType="getSelectedPokemonType()" @clickReset="resetSearch()"/>
+    <Header @changeType="getSelectedPokemonType()" @changeName=" searchPokemon()" @clickReset="resetSearch()"/>
     <Main/>
   </div>
 </template>
